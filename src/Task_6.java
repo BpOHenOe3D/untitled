@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Task_6 {
     void srednee(int x, int y, int z)
     {
-    int srednee= ((z+y+z)/3)/2; // вычисляем среднее арифметическое и делим его на 2
+    int srednee= ((x+y+z)/3)/2; // вычисляем среднее арифметическое и делим его на 2
     if (srednee > 3 )
     System.out.println("Программа выполнена корректно" );
     else
