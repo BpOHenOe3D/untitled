@@ -1,3 +1,4 @@
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Task_13 {
@@ -14,6 +15,6 @@ public class Task_13 {
     System.out.println(s);
 else if (len2>len1)
 System.out.println(b);
-else if (s.equals(b))
+else if (Objects.equals(len1, len2))
         System.out.println("Строки равны");
     }}
