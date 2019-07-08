@@ -2,25 +2,21 @@ import java.io.*;
 
 public class Task_17
 {
-    public static void main(String[] args) throws IOException
+    public static void main(String[] args)
     {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        OutputStream outputStream = new FileOutputStream("D:\\test.txt");
-        System.out.println("Введите текст, для окончания ввода, напишите exit");
-
-        while (true)
-        {
-            String data = reader.readLine();
-            if(data.equals("exit")){
-                outputStream.write(data.getBytes());
-                break;
-            }
-            else {
-                outputStream.write((data +"\r\n").getBytes());
-            }
+        String str;
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Введите текст, для окончания ввода, напишите stop");
+        try (FileWriter fw = new FileWriter("D:\\test.txt")){
+            do {
+                System.out.println("");
+                str = br.readLine();
+                if (str.compareTo("stop")==0) break;
+                str = str +"\r\n";
+                fw.write(str);
+            }while (str.compareTo("stop")!=0);
+        } catch (IOException e) {
+            System.out.println("Ошибка ввода"+e);
         }
-        outputStream.close();
-        reader.close();
     }
-
 }
