@@ -21,7 +21,7 @@ public class Itog_1 {
                 System.out.println("Неверный ввод!");
                 break;
             }
-            sum += (a * Math.pow(2, i));
+            sum += (a * (1<<i));
         }
 
         System.out.println("\"" + str + "\" -> " + sum);
